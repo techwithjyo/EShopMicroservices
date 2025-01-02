@@ -1,0 +1,41 @@
+﻿CQRS (Command Query Responsibility Segregation) is a design pattern that separates the operations 
+that read data (queries) from the operations that update data (commands). 
+This separation allows each operation to be optimized independently, improving scalability and performance. 
+Commands are responsible for changing the state of the application, while queries are responsible for 
+retrieving data without modifying it.
+
+Key Concepts:
+1) Separation of Concerns:
+
+Commands and queries are handled separately, allowing each to be optimized for its specific use case.
+This separation improves the maintainability and scalability of the application.
+
+2) Commands:
+
+Commands are operations that change the state of the application.
+They are typically implemented as classes that encapsulate the data required to perform the operation.
+
+3) Queries:
+
+Queries are operations that retrieve data without modifying it.
+They are typically implemented as classes that encapsulate the criteria for retrieving the data.
+
+
+
+The Item class represents the data model for items in the system.
+The CreateItemCommand class encapsulates the data required to create a new item.
+The CreateItemCommandHandler class handles the logic for creating a new item.
+It maintains a static list of items and an ID counter to simulate a simple in-memory data store.
+
+
+The GetItemQuery class encapsulates the criteria for retrieving an item by its ID.
+The GetItemQueryHandler class handles the logic for retrieving an item by its ID.
+It maintains a static list of items to simulate a simple in-memory data store.
+
+
+This console application demonstrates the basic principles of the CQRS pattern by separating commands and 
+queries into distinct components. The CreateItemCommand and CreateItemCommandHandler handle the creation 
+of new items, while the GetItemQuery and GetItemQueryHandler handle the retrieval of items. 
+This separation of concerns allows each operation to be optimized independently, improving the 
+maintainability and scalability of the application.
+
